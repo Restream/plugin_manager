@@ -16,11 +16,11 @@ Also you will can add or remove plugins from user interface (now only from confi
 
     Install plugin manager with git using HTTPS:
 
-        git clone https://github.com/nodecarter/plugin_manager.git plugins/plugin_manager
+        git clone https://github.com/Restream/plugin_manager.git plugins/plugin_manager
 
     or SSH:
 
-        git clone git@github.com:nodecarter/plugin_manager.git plugins/plugin_manager
+        git clone git@github.com:Restream/plugin_manager.git plugins/plugin_manager
 
 2. Create configuration file (there will be rake task I think) 'config/plugins.yml':
 
