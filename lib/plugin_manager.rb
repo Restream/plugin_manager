@@ -19,6 +19,11 @@ class PluginManager
   # Load all currently selected plugins.
   #
   def load_plugins
+
+    # Change directory for plugins
+    Redmine::Plugin.directory = PLUGINS_AVAILABLE_DIR
+
+    # Load only plugins listed in plugins.yml for current environment
     plugins.each do |plugin_id|
       load_plugin plugin_id
     end
@@ -122,7 +127,7 @@ class PluginManager
   def get_plugin_names_for_env(env)
     config = YAML.load_file(PLUGINS_CONFIG_FILE)
     return [] if config[env].nil?
-    config[env].flatten.uniq
+    config[env].flatten.compact.uniq
   rescue Errno::ENOENT
     puts "Not found plugins config #{ PLUGINS_CONFIG_FILE }. Will be used all available plugins."
     available_plugins
