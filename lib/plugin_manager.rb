@@ -77,7 +77,7 @@ class PluginManager
   #
   def plugins_path_pattern(exact_plugin = nil)
     pattern = plugins.join('|')
-    pattern = "(#{plugins})" if plugins.many?
+    pattern = "(#{pattern})" if plugins.many?
     "#{PLUGINS_AVAILABLE_DIR}/#{exact_plugin || pattern}"
   end
 
